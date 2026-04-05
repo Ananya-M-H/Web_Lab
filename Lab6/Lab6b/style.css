@@ -4,7 +4,7 @@ font-family: sans-serif;
 display: flex;
 justify-content: space-evenly;
 margin: 50px;
-background-image:url(./logo.avif);
+background-image:url(./resimage.png);
 background-repeat: no-repeat;
 background-size: cover;
 }
