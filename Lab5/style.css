@@ -1,0 +1,87 @@
+/* Heading Style */
+h1.heading {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 0, 34);
+    text-transform: uppercase;
+}
+
+/* General Fonts */
+h1 {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-family: 'Times New Roman', serif;
+}
+
+/* Link Styles */
+a {
+    font-size: 25px;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: orange;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: green;
+}
+
+/* Visibility */
+.hidden-element {
+    visibility: hidden;
+}
+
+/* Background */
+.bg {
+    min-height: 60vh;
+}
+
+.repeat {
+    background: url('./jsslogo.png');
+}
+
+.norepeat {
+    background: url('./jsslogo.png') no-repeat;
+}
+
+/* Text Styles */
+.normal {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+    color: blue;
+}
+
+.italic {
+    font-style: italic;
+    color: blue;
+}
+
+.oblique {
+    font-style: oblique;
+    color: blue;
+}
+
+.small-caps {
+    font-variant: small-caps;
+    color: blue;
+}
+
+/* Section Styling */
+section {
+    border: 1px solid black;
+    padding: 10px;
+}
