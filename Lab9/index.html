@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Page</title>
+
+<style>
+body {
+  background-color: purple;
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+form {
+  display: block;
+}
+</style>
+
+<script>
+function validateForm(event) {
+  event.preventDefault(); // ✅ stop page reload
+
+  var userId = document.getElementById("userId").value;
+  var name = document.getElementById("name").value;
+  var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+
+  // User ID
+  if (userId.length < 5 || userId.length > 12) {
+    alert("User ID must be between 5 and 12 characters long");
+    return false;
+  }
+
+  // Name validation
+  if (name.length < 15|| !/^[a-zA-Z ]+$/.test(name)) {
+    alert("Name must be at least 15 characters long and contain only alphabets");
+    return false;
+  }
+
+  // Password validation
+  var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/;
+
+  if (!passwordRegex.test(password)) {
+    alert("Password must be at least 8 characters including 1 uppercase letter, 1 number, and 1 special character");
+    return false;
+  }
+
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    alert("Invalid email address");
+    return false;
+  }
+
+  let details =
+    "User ID: " + userId +
+    "\nName: " + name +
+    "\nPassword: " + password +
+    "\nEmail: " + email;
+
+  alert(details);
+
+  alert("Registration Successful ✅");
+  return true;
+}
+</script>
+
+</head>
+
+<body>
+<div>
+<h1>Registration Page</h1>
+
+<form name="registrationForm" align="center">
+  <label>User ID:</label>
+  <input type="text" id="userId"><br><br>
+
+  <label>Name:</label>
+  <input type="text" id="name"><br><br>
+
+  <label>Password:</label>
+  <input type="text" id="password"><br><br>
+
+  <label>Email:</label>
+  <input type="email" id="email"><br><br>
+
+  <button onclick="validateForm(event)">Submit</button>
+</form>
+
+</div>
+</body>
+</html>
