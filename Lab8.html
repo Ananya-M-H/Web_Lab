@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+  <title>Test Marks Average</title> 
+  <style type="text/css"> 
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #e0f7fa; 
+      padding: 30px; 
+      text-align: center; 
+    } 
+    h2 { 
+      color: #00796b; 
+    } 
+    form { 
+      background: #ffffff; 
+      padding: 20px; 
+      display: inline-block; 
+      border-radius: 8px; 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    } 
+    label { 
+      display: block; 
+      margin: 10px 0; 
+    } 
+    input[type="text"] { 
+      padding: 5px; 
+      border-radius: 4px; 
+      border: 1px solid #ccc; 
+    } 
+    input#t1, input#t2, input#t3 { 
+      width: 60px; 
+    } 
+    input[type="button"] { 
+      background: #00796b; 
+      color: white; 
+      border: none; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin-top: 15px; 
+    } 
+  </style> 
+  <script type="text/javascript"> 
+    function calculateAverage() { 
+      var reg = document.getElementById('reg').value; 
+      var sub = document.getElementById('sub').value; 
+      var t1 = parseFloat(document.getElementById('t1').value); 
+      var t2 = parseFloat(document.getElementById('t2').value); 
+      var t3 = parseFloat(document.getElementById('t3').value); 
+ 
+      if (reg === '' || sub === '' || isNaN(t1) || isNaN(t2) || isNaN(t3)) { 
+        alert("Please fill out all fields correctly."); 
+        return; 
+      } 
+ 
+      var scores = [t1, t2, t3]; 
+      scores.sort(function(a, b){ return b - a; }); 
+      var avg = (scores[1] + scores[2]) / 2; 
+ 
+      alert("Average of Best 2 Tests: " + avg); 
+    } 
+  </script> 
+</head> 
+ 
+<body> 
+  <h2>Student Test Marks</h2> 
+  <form action="#"> 
+    <label>Register No:<input type="text" id="reg" /></label> 
+ 
+    <label>Subject Code:<input type="text" id="sub" /></label> 
+ 
+    <label>Test 1 Marks:<input type="text" id="t1" /></label> 
+ 
+    <label>Test 2 Marks:<input type="text" id="t2" /></label> 
+ 
+    <label>Test 3 Marks:<input type="text" id="t3" /></label> 
+ 
+    <input type="button" value="Calculate Average" onclick="calculateAverage()" /> 
+  </form> 
+ 
+</body> 
+</html> 
